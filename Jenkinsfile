@@ -17,14 +17,14 @@ pipeline {
             steps{
                     nexusArtifactUploader artifacts: [
                         [
-                            artifactId: 'simple-app', 
+                            artifactId: 'simple-web-app', 
                             classifier: '', 
-                            file: "target/simple-app-${mavenPom.version}.war", 
+                            file: "target/simple-web-app-1.0.0.war", 
                             type: 'war'
                         ]
                     ], 
                     credentialsId: 'nexus-user-credentials', 
-                    groupId: 'in.javahome', 
+                    groupId: 'org.mitre', 
                     nexusUrl: '54.169.88.118:8081', 
                     nexusVersion: 'nexus3', 
                     protocol: 'http', 
