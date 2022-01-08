@@ -7,6 +7,11 @@ pipeline {
         buildDiscarder logRotator(daysToKeepStr: '5', numToKeepStr: '7')
     }
     stages{
+        stage('Initialize'){
+            steps{
+                echo "M2_HOME = "/opt/apache-maven-3.8.4"
+                echo "PATH = ${M2_HOME}/bin:${PATH}"
+            }
         stage('Build'){
             steps{
                  sh script: 'mvn clean package'
