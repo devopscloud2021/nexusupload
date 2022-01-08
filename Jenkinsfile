@@ -3,11 +3,6 @@ pipeline {
     tools {
         maven 'maven'
     }
-    environment {
-	 M2_HOME="/opt/apache-maven-3.8.4"
-         M2='$M2_HOME/bin'
-         PATH='$M2:$PATH'	
-    }
     options {
         buildDiscarder logRotator(daysToKeepStr: '5', numToKeepStr: '7')
     }
